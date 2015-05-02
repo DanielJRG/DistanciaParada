@@ -3,35 +3,35 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.roxed.distanciadeparada.Seleccionar"
     android:orientation="vertical">
+
     <TextView
-        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/titulo" />
+        android:text="@string/ing_velocidad" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnseleccionar"
-            android:layout_width="fill_parent"
-            android:layout_height="48dp"
-            android:onClick="onClicSeleccionar"
-            android:text="@string/seleccionar" />
+        <EditText
+            android:id="@+id/txtvelocidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Velocidad en Km/h" />
 
         <Button
-            android:id="@+id/btningresar"
+            android:id="@+id/btncalcular"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
-            android:onClick="onClicIngresar"
-            android:text="@string/ingresar" />
+            android:onClick="onClicCalcular"
+            android:text="@string/calcular" />
+
 
     </LinearLayout>
-
 
 </LinearLayout>

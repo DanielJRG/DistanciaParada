@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">Distancia de Parada</string>
+    <string name="app_name">Distancia De Parada</string>
+    <string name="titulo">DISTANCIA DE PARADA</string>
+    <string name="action_settings">Settings</string>
+    <string name="ingresar">Ingresar Datos Libremente </string>
+    <string name="seleccionar">Seleccionar Datos</string>
+    <string name="calcular">Calcular Distancia</string>
+    <string name="title_activity_seleccionar">Seleccionar</string>
+    <string name="ing_velocidad">Ingrese la velocidad</string>
+    <string name="title_activity_ingresar"> Ingresar</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 </resources>
