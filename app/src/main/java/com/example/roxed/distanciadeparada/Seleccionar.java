@@ -1,21 +1,31 @@
 package com.example.roxed.distanciadeparada;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 
 
 public class Seleccionar extends ActionBarActivity {
 
+    private Intent intSesion;
+    private Button calcular;
+    private Button calcular1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccionar);
 
+        calcular = (Button) findViewById(R.id.btncalcular);
+        calcular1 = (Button) findViewById(R.id.btncalcular1);
+
+//Codigo para el uso de pestañas
         Resources res = getResources();
 
         TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
@@ -23,14 +33,12 @@ public class Seleccionar extends ActionBarActivity {
 
         TabHost.TabSpec spec=tabs.newTabSpec("mitab1");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("A NIVEL Y/O  MOJADO",
-                res.getDrawable(android.R.drawable.ic_btn_speak_now));
+        spec.setIndicator("A NIVEL Y/O  MOJADO");
         tabs.addTab(spec);
 
         spec=tabs.newTabSpec("mitab2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("GRAVA o ASFALTO",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
+        spec.setIndicator("GRAVA o ASFALTO");
         tabs.addTab(spec);
 
         tabs.setCurrentTab(0);
@@ -42,6 +50,17 @@ public class Seleccionar extends ActionBarActivity {
         });
     }
 
+
+    public void onClicCalcular(View v){
+        intSesion = new Intent(this, Resultado.class);
+        startActivity(intSesion);
+
+    }
+    public void onClicCalcular1(View v){
+        intSesion = new Intent(this, Resultado.class);
+        startActivity(intSesion);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

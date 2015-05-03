@@ -1,20 +1,28 @@
 package com.example.roxed.distanciadeparada;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 
 
 public class Ingresar extends ActionBarActivity {
 
+    private Intent intSesion;
+    private Button calcular;
+    private Button calcular1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingresar);
+        calcular = (Button) findViewById(R.id.btncalcular);
+        calcular1 = (Button) findViewById(R.id.btncalcular1);
 
         Resources res = getResources();
 
@@ -41,6 +49,16 @@ public class Ingresar extends ActionBarActivity {
     }
 
 
+    public void onClicCalcular(View v){
+        intSesion = new Intent(this, Resultado.class);
+        startActivity(intSesion);
+
+    }
+    public void onClicCalcular1(View v){
+        intSesion = new Intent(this, Resultado.class);
+        startActivity(intSesion);
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
