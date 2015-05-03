@@ -1,9 +1,12 @@
 package com.example.roxed.distanciadeparada;
 
+import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 
 public class Seleccionar extends ActionBarActivity {
@@ -12,6 +15,31 @@ public class Seleccionar extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccionar);
+
+        Resources res = getResources();
+
+        TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
+        tabs.setup();
+
+        TabHost.TabSpec spec=tabs.newTabSpec("mitab1");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("A NIVEL Y/O  MOJADO",
+                res.getDrawable(android.R.drawable.ic_btn_speak_now));
+        tabs.addTab(spec);
+
+        spec=tabs.newTabSpec("mitab2");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("GRAVA o ASFALTO",
+                res.getDrawable(android.R.drawable.ic_dialog_map));
+        tabs.addTab(spec);
+
+        tabs.setCurrentTab(0);
+
+        tabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            public void onTabChanged(String tabId) {
+                Log.i("AndroidTabsDemo", "Pulsada pesta�a: " + tabId);
+            }
+        });
     }
 
 

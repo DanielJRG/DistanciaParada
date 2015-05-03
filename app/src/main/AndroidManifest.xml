@@ -17,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Ingresar"
-            android:label="@string/title_activity_ingresar" >
-        </activity>
-        <activity
             android:name=".Seleccionar"
             android:label="@string/title_activity_seleccionar" >
+        </activity>
+        <activity
+            android:name=".Ingresar"
+            android:label="@string/title_activity_ingresar" >
         </activity>
     </application>
 

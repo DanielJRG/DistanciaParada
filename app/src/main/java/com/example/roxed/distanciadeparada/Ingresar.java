@@ -1,9 +1,12 @@
 package com.example.roxed.distanciadeparada;
 
+import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 
 public class Ingresar extends ActionBarActivity {
@@ -12,6 +15,29 @@ public class Ingresar extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingresar);
+
+        Resources res = getResources();
+
+        TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
+        tabs.setup();
+//Codigo para el uso de pestañas
+        TabHost.TabSpec spec=tabs.newTabSpec("mitab1");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("A NIVEL Y/O  MOJADO");
+        tabs.addTab(spec);
+
+        spec=tabs.newTabSpec("mitab2");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("GRAVA o ASFALTO");
+        tabs.addTab(spec);
+
+        tabs.setCurrentTab(0);
+
+        tabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            public void onTabChanged(String tabId) {
+                Log.i("AndroidTabsDemo", "Pulsada pestaña: " + tabId);
+            }
+        });
     }
 
 

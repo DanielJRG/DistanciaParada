@@ -1,37 +1,165 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.roxed.distanciadeparada.Seleccionar"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/ing_velocidad" />
+    <TabHost android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/txtvelocidad"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Velocidad en Km/h" />
+            android:layout_height="match_parent" >
 
-        <Button
-            android:id="@+id/btncalcular"
-            android:layout_width="fill_parent"
-            android:layout_height="48dp"
-            android:onClick="onClicCalcular"
-            android:text="@string/calcular" />
+            <TabWidget android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@android:id/tabs"
+                android:clickable="true" />
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@android:id/tabcontent" >
+
+                <LinearLayout android:id="@+id/tab1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/txtv0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:hint="Velocidad en Km/h"
+                            android:digits="0123456789."
+                            android:inputType="numberDecimal"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/chkVP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chck_Velocidad_Proyecto" />
+                            <CheckBox
+                                android:id="@+id/chkVV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chck_Velocidad_Vehiculo" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btncalcular"
+                            android:layout_width="fill_parent"
+                            android:layout_height="48dp"
+                            android:onClick="onClicCalcular"
+                            android:text="@string/calcular" />
+                    </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
 
 
-    </LinearLayout>
+                <LinearLayout android:id="@+id/tab2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
 
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/txtv01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:hint="Velocidad en Km/h"
+                            android:digits="0123456789."
+                            android:inputType="numberDecimal"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/chkVP1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chck_Velocidad_Proyecto" />
+                            <CheckBox
+                                android:id="@+id/chkVV1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chck_Velocidad_Vehiculo" />
+                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/txtPen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:hint="Pendiente en %"
+                            android:digits="0123456789."
+                            android:inputType="numberDecimal"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/chkAsf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chck_asf" />
+                            <CheckBox
+                                android:id="@+id/chkGra"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chck_grav" />
+                        </LinearLayout>
+                        <Button
+                            android:id="@+id/btncalcular1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="48dp"
+                            android:onClick="onClicCalcular"
+                            android:text="@string/calcular" />
+
+                    </LinearLayout>
+
+                    </ScrollView>
+
+
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </TabHost>
 </LinearLayout>
