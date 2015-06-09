@@ -1,7 +1,7 @@
 package com.example.roxed.distanciadeparada;
 
 /**
- * Created by usuario on 1/05/15.
+ * Created by Edy on 1/05/15.
  */
 
 public class DistanciaParada {
